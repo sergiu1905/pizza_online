@@ -1,0 +1,145 @@
+body {
+  font-weight: 400;
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
+
+.navbar-sticky {
+  background-color: blanchedalmond;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.h1-navbar {
+  color: blue;
+  font-size: 3rem;
+
+}
+
+.h1-navbar a {
+  text-decoration: none;
+}
+
+.h1-navbar:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.navbar-contact {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.navbar-contact-button {
+  text-decoration: none;
+  color: blue;
+}
+
+.navbar-contact-phone p {
+  background-color: rgb(242, 192, 192);
+  padding: 3px;
+}
+
+.navbar-contact-button:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.navbar-menu-indiv {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+
+}
+
+.navbar-menu-indiv:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.horizontal {
+  border-color: rgb(2, 2, 121);
+  border-width: .4rem;
+  margin: 0;
+}
+
+.menu {
+  background-color: rgb(227, 227, 227);
+}
+
+.pizza {
+  background-color: white;
+}
+
+.pizza-img-description {
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px lightgrey;
+  margin: 1rem;
+}
+
+.pizza-description {
+  position: relative;
+}
+
+.card-product-number {
+  color: white;
+  height: 2.5rem;
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+  text-align: end;
+  top: 0;
+  width: 2.5rem;
+  z-index: 1;
+  background-color: brown;
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 0%);
+}
+
+.pizza-img {
+  margin: 0;
+  padding: 0;
+}
+
+.h1-pizza {
+  color: red;
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.h4-pizza {
+  color: blue;
+  text-transform: capitalize;
+}
+
+.pret {
+  font-weight: 600;
+}
+
+.btn-order {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 5px 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  width: 90%;
+  border: none;
+  transition: all .3s;
+}
+
+.btn-order:hover {
+  box-shadow: 0 5px 10px rgb(179, 250, 179);
+  transform: translateY(-5px);
+  color: green;
+  background-color: rgba(255, 0, 0, 0);
+  font-weight: 600;
+}

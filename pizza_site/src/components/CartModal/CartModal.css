@@ -1,0 +1,54 @@
+#modal {
+    width: 30%;
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(203, 202, 203, 0.758);
+    animation: fade-slide-in-from-top 0.3s ease-in-out;
+}
+
+#modal::backdrop {
+    background: rgba(8, 0, 0, 0.892);
+}
+
+#modal h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+#modal form {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#modal form button {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#modal form button:hover {
+    color: rgba(232, 81, 81, 0.949);
+    transform: scale(1.1);
+}
+
+#modal form button:last-of-type {
+
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#modal form button:last-of-type:hover {
+    color: rgba(232, 81, 81, 0.949);
+    transform: scale(1.1);
+}

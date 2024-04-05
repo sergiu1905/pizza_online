@@ -1,0 +1,30 @@
+.slideshow-container {
+    position: relative;
+
+    img {
+        width: 98vw;
+        height: 70vh;
+        object-fit: cover;
+    }
+}
+
+.previous,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.previous {
+    left: 0.8rem
+}
+
+.next {
+    right: 0.8rem
+}

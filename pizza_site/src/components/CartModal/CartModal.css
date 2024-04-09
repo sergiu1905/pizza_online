@@ -31,9 +31,25 @@
     color: var(--primary-color);
     cursor: pointer;
     font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#modal form a {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
 }
 
 #modal form button:hover {
+    color: rgba(232, 81, 81, 0.949);
+    transform: scale(1.1);
+}
+
+#modal form a:hover {
     color: rgba(232, 81, 81, 0.949);
     transform: scale(1.1);
 }
@@ -51,4 +67,28 @@
 #modal form button:last-of-type:hover {
     color: rgba(232, 81, 81, 0.949);
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 960px) {
+    #modal h2 {
+        font-size: 1rem;
+    }
+
+    #cart-items li {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+
+    .cart-item-actions button {
+        padding: 0.35rem;
+    }
+
+    #cart-total-price {
+        font-size: 0.7rem;
+    }
+
+    #modal-actions {
+        display: flex;
+        flex-direction: column;
+    }
 }

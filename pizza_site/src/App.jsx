@@ -2,8 +2,17 @@ import { useState } from 'react';
 
 import Header from './components/Header/Header.jsx';
 import Shop from './components/Shop/Shop.jsx';
-import { PizzaProducts } from './PizzaProducts.js';
+import {
+  PizzaProducts,
+  Salate,
+  Sandwich,
+  SosuriProduct,
+  DressingsSalate,
+  Drinks,
+} from './PizzaProducts.js';
 import SlideShow from './components/SlideShow/SlideShow.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PaymentPage from './components/PaymentPage/PaymentPage.jsx';
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
@@ -26,7 +35,15 @@ function App() {
         };
         updatedItems[existingCartItemIndex] = updatedItem;
       } else {
-        const product = PizzaProducts.find((product) => product.id === id);
+        const allProducts = [
+          ...PizzaProducts,
+          ...Sandwich,
+          ...SosuriProduct,
+          ...Salate,
+          ...DressingsSalate,
+          ...Drinks,
+        ];
+        const product = allProducts.find((product) => product.id === id);
         updatedItems.push({
           id: id,
           name: product.title,
@@ -65,15 +82,33 @@ function App() {
       };
     });
   }
-
+  function handleCancelOrder() {
+    setShoppingCart({ items: [] });
+  }
+  function handlePayOrder() {}
   return (
     <>
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
-      <SlideShow />
-      <Shop onAddItemToCart={handleAddItemToCart} />
+      <Router>
+        <Routes>
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header
+                  cart={shoppingCart}
+                  onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
+                  handleCancelOrder={handleCancelOrder}
+                  handlePayOrder={handlePayOrder}
+                />
+                <PaymentPage />
+                <SlideShow />
+                <Shop onAddItemToCart={handleAddItemToCart} />
+              </>
+            }
+          />
+        </Routes>
+      </Router>
     </>
   );
 }

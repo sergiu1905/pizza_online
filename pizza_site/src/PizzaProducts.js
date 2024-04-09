@@ -46,6 +46,27 @@ import Sassone from './components/pictures/sassone.webp'
 import Afumigatto from './components/pictures/formaggio-afumigatto.webp'
 import ProsciuttoCrudo from './components/pictures/prosciutto-crudo.webp'
 import Contadino from './components/pictures/contadino.webp'
+import Caesar from './components/pictures/salata-caesar.webp'
+import Caprese from './components/pictures/salata-caprese.webp'
+import Tuna from './components/pictures/salata-tuna.webp'
+import Greek from './components/pictures/salata-greek.webp'
+import Cheese from './components/pictures/salata-cheese.webp'
+import Beef from './components/pictures/salata-beef.webp'
+import Iaurt from './components/pictures/dressing-de-iaurt.webp'
+import French from './components/pictures/dressing-french.webp'
+import BlueCheese from './components/pictures/dressing-bluecheese.webp'
+import Roz from './components/pictures/dressing-roz.webp'
+import DrCaesar from './components/pictures/dressing-caesar.webp'
+import Italian from './components/pictures/dressing-italian.webp'
+import Plata from './components/pictures/apa-plata.webp'
+import Minerala from './components/pictures/apa-minerala.webp'
+import Cola from './components/pictures/coca-cola.webp'
+import Fanta from './components/pictures/fanta-portocale.webp'
+import Ursus from './components/pictures/ursus.webp'
+import Haineken from './components/pictures/haineken.webp'
+import VinAlb from './components/pictures/maiastru-alb-demisec.webp'
+import VinRose from './components/pictures/maiastru-rose-demisec.webp'
+import VinRosu from './components/pictures/maiastru-rosu-demisec.webp'
 
 export const PizzaProducts = [
   {
@@ -419,5 +440,173 @@ export const Sandwich = [
     price: 5,
     description:
       'Aluat (150g)(gluten, lapte, ou), salată verde (30g), bacon prăjit (80g), mozzarella (40g)(lapte), ardei gras (20g), sos maioneză (25g)(ou, muștar), sos muștar (25g), sos ketchup (25g)',
+  },
+]
+export const Salate = [
+  {
+    id: 'p48',
+    image: Caesar,
+    title: 'Salata Caesar',
+    price: 24.40,
+    description:
+      'Salată iceberg (150g), piept de pui (80g), scalii parmesan (15g)(lapte), anșoa (5g)(pește), crutoane (10g)(gluten), dressing caesar (100g)',
+  },
+  {
+    id: 'p49',
+    image: Caprese,
+    title: 'Salata Caprese',
+    price: 26.40,
+    description:
+      'Roșii (150g), sos pesto (5g), mozzarella bocconicio (125g)(lapte), dressing italian (100g)',
+  },
+  {
+    id: 'p50',
+    image: Tuna,
+    title: 'Salata Tuna',
+    price: 28.4,
+    description:
+      'Salată iceberg (100g), roșii cherry (35g), ceapă (30g), fasole canelini (30g), castravete (45g), porumb dulce (25g), ton (80g)(pește), un ou feliat (75g), crutoane (10g)(gluten), dressing french (100g)',
+  },
+  {
+    id: 'p51',
+    image: Greek,
+    title: 'Salata Greek',
+    price: 24.40,
+    description:
+      'Salată iceberg (100g), roșii cherry (35g), măsline kalamata (40g), ardei kapia (15g), castravete (45g), telemea (80g)(lapte), piept de pui (60g), crutoane (10g)(gluten), dressing iaurt (100g)(lapte)',
+  },
+  {
+    id: 'p52',
+    image: Cheese,
+    title: 'Salata Cheese',
+    price: 26.40,
+    description:
+      'Salată iceberg (100g), scalia parmesan (15g)(lapte), roșii cherry (35g), struguri (30g), măr (50g), telemea (30g)(lapte), cașcaval afumat (30g)(lapte),  nuci (10g), crutoane (10g)(gluten), dressing blue cheese (100g)(lapte)',
+  },
+  {
+    id: 'p53',
+    image: Beef,
+    title: 'Salata Beef',
+    price: 28.40,
+    description:
+      'Salată iceberg (100g), andive (30g)(pește), roșii cherry (35g), ceapă roșie (20g), măsline kalamata (30g), castravete (45g), carne de vită (80g), crutoane (10g)(gluten), dressing roz (100g)',
+  },]
+export const DressingsSalate = [
+  {
+    id: 'p54',
+    image: Iaurt,
+    title: 'Dressing de Iaurt',
+    price: 5,
+    description:
+      'Iaurt (500g)(lapte), suc de lămâie (120g), sare (2g) piper (2g), lapte (150g)',
+  },
+  {
+    id: 'p55',
+    image: French,
+    title: 'Dressing French',
+    price: 5,
+    description:
+      'Maioneză (500g)(ou, muștar), smântână dulce (200g)(lapte), oțet (30g), sare (2g), piper (2g), chives (3g), lapte (150g)',
+  },
+  {
+    id: 'p56',
+    image: BlueCheese,
+    title: 'Dressing BlueCheese',
+    price: 5,
+    description:
+      'Blue cheese (200g)(lapte), smântână dulce (500g)(lapte), sare (2g), piper (2g), lapte (150g)',
+  },
+  {
+    id: 'p57',
+    image: Roz,
+    title: 'Dressing Roz',
+    price: 5,
+    description:
+      'Ketchup (250g), maioneză (250g)(ou, muștar), sos tabasco (3g), sare (2g), piper (2g), sos worchester (3g), lapte (150g)',
+  },
+  {
+    id: 'p58',
+    image: DrCaesar,
+    title: 'Dressing Caesar',
+    price: 5,
+    description:
+      'Maioneză (500g)(ou, muștar), anșoa (8g)(pește), usturoi (2g), parmesan (50g)(lapte), sare (2g), piper (2g), lapte (150g)',
+  },
+  {
+    id: 'p59',
+    image: Italian,
+    title: 'Dressing Italian',
+    price: 28.40,
+    description:
+      'Ulei de măsline (500g), oțet balsamic (200g), sare (2g), piper (2g)',
+  },
+]
+export const Drinks = [
+  {
+    id: 'p60',
+    image: Plata,
+    title: 'Apa Plata (500ml)',
+    price: 5,
+    description: ''
+    ,
+  },
+  {
+    id: 'p61',
+    image: Minerala,
+    title: 'Apa Minerala (500ml)',
+    price: 5,
+    description: ''
+    ,
+  }, {
+    id: 'p62',
+    image: Cola,
+    title: 'Coca Cola (500ml)',
+    price: 8,
+    description: ''
+    ,
+  }, {
+    id: 'p63',
+    image: Fanta,
+    title: 'Fanta Portocale (500ml)',
+    price: 8,
+    description: ''
+    ,
+  }, {
+    id: 'p64',
+    image: Ursus,
+    title: 'Ursus (500ml)',
+    price: 5,
+    description: ''
+    ,
+  },
+  {
+    id: 'p65',
+    image: Haineken,
+    title: 'Haineken (500ml)',
+    price: 10,
+    description: ''
+    ,
+  }, {
+    id: 'p66',
+    image: VinAlb,
+    title: 'Maiastru alb demisec (750ml)',
+    price: 42,
+    description: ''
+    ,
+  },
+  {
+    id: 'p67',
+    image: VinRose,
+    title: 'Maiastru rose demisec (750ml)',
+    price: 42,
+    description: ''
+    ,
+  }, {
+    id: 'p68',
+    image: VinRosu,
+    title: 'Maiastru rosu demisec (750ml)',
+    price: 42,
+    description: ''
+    ,
   },
 ]

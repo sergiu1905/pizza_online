@@ -3,7 +3,13 @@ import { FaBars } from 'react-icons/fa';
 import Logo from '../pictures/logo.png';
 import CartModal from '../CartModal/CartModal.jsx';
 import './Header.css';
-export default function Header({ cart, onUpdateCartItemQuantity }) {
+import { Link } from 'react-router-dom';
+
+export default function Header({
+  cart,
+  onUpdateCartItemQuantity,
+  handleCancelOrder,
+}) {
   const modal = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,13 +28,14 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
   function handleOutsideClick() {
     setIsMenuOpen(false);
   }
+
   let modalActions = <button>Anuleaza</button>;
 
   if (cartQuantity > 0) {
     modalActions = (
       <>
-        <button>Anuleaza</button>
-        <button>Comanda</button>
+        <button onClick={handleCancelOrder}>Anuleaza</button>
+        <Link to="/payment">Plateste</Link>
       </>
     );
   }
@@ -80,17 +87,18 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
                 {isMenuOpen && (
                   <div className="dropdown-menu">
                     <a href="#pizza">Pizza</a>
-                    <a href="#dressings">Sosuri</a>
                     <a href="#sandwich">Sandwich</a>
                     <a href="#salads">Salate</a>
-                    <a href="#desserts">Desert</a>
-                    <a href="drinks">Bauturi</a>
+                    <a href="#drinks">Bauturi</a>
                   </div>
                 )}
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Link to="/payment">Payment</Link>
       </div>
     </>
   );

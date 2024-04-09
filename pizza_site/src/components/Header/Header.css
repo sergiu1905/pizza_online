@@ -73,7 +73,7 @@ h1 {
 .dropdown-menu {
     width: 99vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     top: 100%;
     left: 0;
     background-color: fff;
@@ -145,7 +145,8 @@ h1 {
         align-items: left;
 
         a {
-            font-size: 15px;
+            font-size: 20px;
+            margin-top: 10px;
         }
     }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from './components/Header/Header.jsx';
 import Shop from './components/Shop/Shop.jsx';
@@ -12,8 +12,7 @@ import {
 } from './PizzaProducts.js';
 import SlideShow from './components/SlideShow/SlideShow.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PaymentPage from './components/PaymentPage/PaymentPage.jsx';
-
+import CreeazaPizza from './components/CreeazaPizza/CreeazaPizza.jsx';
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
@@ -85,12 +84,14 @@ function App() {
   function handleCancelOrder() {
     setShoppingCart({ items: [] });
   }
-  function handlePayOrder() {}
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(shoppingCart));
+  }, [setShoppingCart, shoppingCart]);
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="creeaza_pizza" element={<CreeazaPizza />} />
           <Route
             path="/"
             element={
@@ -99,9 +100,7 @@ function App() {
                   cart={shoppingCart}
                   onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
                   handleCancelOrder={handleCancelOrder}
-                  handlePayOrder={handlePayOrder}
                 />
-                <PaymentPage />
                 <SlideShow />
                 <Shop onAddItemToCart={handleAddItemToCart} />
               </>

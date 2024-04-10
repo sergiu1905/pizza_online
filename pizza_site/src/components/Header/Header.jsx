@@ -4,7 +4,7 @@ import Logo from '../pictures/logo.png';
 import CartModal from '../CartModal/CartModal.jsx';
 import './Header.css';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 export default function Header({
   cart,
   onUpdateCartItemQuantity,
@@ -14,7 +14,23 @@ export default function Header({
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cartQuantity = cart.items.length;
+  const [paymentDetails, setPaymentDetails] = useState({ total: 0 });
+  useEffect(() => {
+    const cartPay = JSON.parse(localStorage.getItem('cart'));
+    cartPay.items.forEach((item) => {
+      setPaymentDetails({
+        total: paymentDetails.total + item.price * item.quantity,
+      });
+    });
+  }, [cart]);
 
+  async function handlePaymentClick() {
+    const response = await axios.post(
+      'http://localhost:8085/stripe/create-payment-link',
+      { amount: Number(paymentDetails.total) * 100, currency: 'ron' }
+    );
+    window.location.href = response.data.paymentLink;
+  }
   function handleOpenCartClick() {
     modal.current.open();
   }
@@ -35,7 +51,7 @@ export default function Header({
     modalActions = (
       <>
         <button onClick={handleCancelOrder}>Anuleaza</button>
-        <Link to="/payment">Plateste</Link>
+        <button onClick={handlePaymentClick}>Plateste</button>
       </>
     );
   }
@@ -90,15 +106,13 @@ export default function Header({
                     <a href="#sandwich">Sandwich</a>
                     <a href="#salads">Salate</a>
                     <a href="#drinks">Bauturi</a>
+                    <Link to={'/creeaza_pizza'}>Creeaza Pizza</Link>
                   </div>
                 )}
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <Link to="/payment">Payment</Link>
       </div>
     </>
   );

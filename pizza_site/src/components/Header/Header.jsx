@@ -86,12 +86,15 @@ export default function Header({
               <img src={Logo} alt="Logo" />
               <h1>Blue Viking Pizza</h1>
             </div>
-            <p>
-              <button className="contact">Contact</button>
+            <div>
+              <button>
+                <Link to={'/contact'}>Contact</Link>
+              </button>
+
               <button onClick={handleOpenCartClick}>
                 Produse({cartQuantity})
               </button>
-            </p>
+            </div>
           </header>
           <div>
             <div

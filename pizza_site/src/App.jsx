@@ -13,6 +13,7 @@ import {
 import SlideShow from './components/SlideShow/SlideShow.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreeazaPizza from './components/CreeazaPizza/CreeazaPizza.jsx';
+import Contact from './components/contact/contact.jsx';
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
@@ -92,6 +93,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="creeaza_pizza" element={<CreeazaPizza />} />
+          <Route path="contact" element={<Contact />} />
           <Route
             path="/"
             element={

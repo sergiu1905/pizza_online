@@ -13,7 +13,7 @@ import {
 import SlideShow from './components/SlideShow/SlideShow.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreeazaPizza from './components/CreeazaPizza/CreeazaPizza.jsx';
-import Contact from './components/contact/contact.jsx';
+import Contact from './components/Contact/Contact.jsx';
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],

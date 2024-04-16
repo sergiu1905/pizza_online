@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './CreeazaPizza.css';
 import { useState } from 'react';
 import PizzaImg from '../../components/pictures/creeaza-pizza.jpg';
+import axios from 'axios';
 export default function CreeazaPizza() {
   const initialToppings = [
     { id: 't1', label: 'Parmezan', price: 4.5 },
@@ -61,6 +62,13 @@ export default function CreeazaPizza() {
     if (Object.values(toppings).some((isSelected) => isSelected))
       setOrderConfirmed(true);
   };
+  async function handlePaymentClick() {
+    const response = await axios.post(
+      'http://localhost:8085/stripe/create-payment-link',
+      { amount: Number(calculateTotalPrice()) * 100, currency: 'ron' }
+    );
+    window.location.href = response.data.paymentLink;
+  }
   return (
     <>
       <h1>Alege topping-uri</h1>
@@ -94,14 +102,16 @@ export default function CreeazaPizza() {
             Numarul maxim de topping-uri disponibile:
             <span>{availableTopping}</span>
           </p>
-          <button onClick={handleConfirmation}>Fii Creativ</button>
-          {confirmationAttempted &&
-            !Object.values(toppings).some((isSelected) => isSelected) && (
-              <p>Alege minim un topping</p>
-            )}
-          {orderConfirmed && (
+          {!orderConfirmed ? (
+            <button onClick={handleConfirmation}>
+              {confirmationAttempted &&
+              !Object.values(toppings).some((isSelected) => isSelected)
+                ? 'Alege minim un topping'
+                : 'Fii Creativ'}
+            </button>
+          ) : (
             <>
-              <p>Ai ales pizza cu {7 - availableTopping} topping-uri:</p>
+              <p>Ai ales pizza cu {7 - availableTopping} topping-uri :</p>
               <p>
                 {initialToppings
                   .filter((topping) => toppings[topping.id])
@@ -109,7 +119,13 @@ export default function CreeazaPizza() {
                     <span key={topping.id}>{topping.label}, </span>
                   ))}
               </p>
-              <Link to={'/contact'}>Contact</Link>
+              <div className="buttons-topping">
+                <button onClick={handlePaymentClick}>Plateste</button>
+
+                <Link to={'/contact'} id="contact-btn">
+                  Contact
+                </Link>
+              </div>
             </>
           )}
         </div>

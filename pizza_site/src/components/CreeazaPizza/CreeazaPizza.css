@@ -75,7 +75,7 @@ span {
 
 button {
     width: 20rem;
-    background: var(--primary-color);
+    background: none;
     border-color: var(--secondary-color);
     border-radius: 10px;
     padding: 0.5rem 1.5rem;
@@ -85,6 +85,34 @@ button {
 }
 
 button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.03);
+    transition: 200ms;
+}
+
+.buttons-topping {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#contact-btn {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-top: 20px;
+    width: 20rem;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+#contact-btn:hover {
     background: var(--secondary-color);
     color: var(--primary-color);
     transform: scale(1.03);
@@ -142,11 +170,11 @@ button:hover {
         box-shadow: 3px 3px 8px darkgray;
         background-color: rgba(0, 255, 255, 0.132);
 
+
         label {
             cursor: pointer;
 
         }
-
     }
 
     .link-home {

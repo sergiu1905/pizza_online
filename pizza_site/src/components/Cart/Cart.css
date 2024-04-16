@@ -34,6 +34,7 @@
 }
 
 .cart-item-actions button {
+    width: 10px;
     cursor: pointer;
     background: var(--primary-color);
     border: none;

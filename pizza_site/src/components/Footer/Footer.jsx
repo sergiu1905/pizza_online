@@ -1,31 +1,30 @@
-import './Foother.css';
-import Info from '../Foother/info.pdf';
+import './Footer.css';
 import { useState } from 'react';
-export default function Foother() {
+export default function Footer() {
   const [showPDF, setShowPDF] = useState(false);
   const handleClickPDF = () => {
     setShowPDF(true);
   };
   return (
-    <div className="foother">
-      <div className="foother-1">
+    <div className="footer">
+      <div className="footer-1">
         <h3>BLUE VIKING PIZZA</h3>
         <p>
           Iti oferim cea mai larga gama de pizza din oras. Exista si optiunea de
           a-ti crea propria pizza folosindu-ti toata imaginatia culinara.
         </p>
       </div>
-      <div className="foother-2">
+      <div className="footer-2">
         {' '}
         <h3>CONTACTEAZA-NE</h3>
         <p>0722xxxxxx</p>
         <p>0733xxxxxx</p>
         <p>0268xxxxxx</p>
       </div>
-      <div className="foother-3">
+      <div className="footer-3">
         <h3>
           {' '}
-          <a href="../Foother/info.pdf'" onClick={handleClickPDF}>
+          <a href="../Footer/info.pdf'" onClick={handleClickPDF}>
             Descarcă gramaje, alergeni, ingrediente și valori nutriționale
           </a>{' '}
         </h3>

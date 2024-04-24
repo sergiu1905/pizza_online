@@ -8,7 +8,7 @@
 
 #main-header {
     margin-top: 20px;
-    width: 95vw;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -89,7 +89,6 @@ h1 {
     top: 100%;
     left: 0;
     background-color: fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     padding: 10px;
     z-index: 1000;
@@ -129,11 +128,9 @@ h1 {
 }
 
 .buttons-burger {
-    background-color: var(--primary-color);
+    top: -15px;
     position: absolute;
-    margin-top: 30px;
     width: auto;
-    left: -48px;
 }
 
 @media screen and (max-width: 800px) {
@@ -160,5 +157,27 @@ h1 {
         padding: 0;
         margin: 10px 0 5px 0;
         background-color: none;
+    }
+
+    .buttons-burger {
+        background-color: var(--primary-color);
+        top: 31px;
+        left: -48px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #main-header a {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+
+    #main-header button {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        margin: 10px;
+        font-size: 1.5rem;
     }
 }

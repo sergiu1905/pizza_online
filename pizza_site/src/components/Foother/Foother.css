@@ -1,0 +1,63 @@
+.foother {
+    margin-top: 35px;
+    display: flex;
+    margin-left: 3%;
+    padding-bottom: 50px;
+    width: 87%;
+    border-radius: 10px;
+
+
+    h3 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        color: var(--secondary-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: rgb(2, 69, 2);
+    }
+
+    div {
+        width: 29%;
+
+    }
+
+    p {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .foother-2,
+    .foother-3 {
+        margin-left: 110px;
+    }
+}
+
+
+@media screen and (max-width: 1250px) {
+    h3 {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .foother {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        .foother-1,
+        .foother-2,
+        .foother-3 {
+            margin-left: 0px;
+            width: 90%;
+        }
+    }
+
+}

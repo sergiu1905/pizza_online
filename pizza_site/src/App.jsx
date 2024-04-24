@@ -14,6 +14,7 @@ import SlideShow from './components/SlideShow/SlideShow.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreeazaPizza from './components/CreeazaPizza/CreeazaPizza.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import Foother from './components/Foother/Foother.jsx';
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
@@ -110,6 +111,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Foother />
     </>
   );
 }

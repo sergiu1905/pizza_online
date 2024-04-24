@@ -14,20 +14,15 @@ export default function Header({
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cartQuantity = cart.items.length;
-  const [paymentDetails, setPaymentDetails] = useState({ total: 0 });
-  useEffect(() => {
-    const cartPay = JSON.parse(localStorage.getItem('cart'));
-    cartPay.items.forEach((item) => {
-      setPaymentDetails({
-        total: paymentDetails.total + item.price * item.quantity,
-      });
-    });
-  }, [cart]);
-
   async function handlePaymentClick() {
+    const cartPay = JSON.parse(localStorage.getItem('cart'));
+    let total = 0;
+    cartPay.items.forEach((item) => {
+      total = total + item.price * item.quantity;
+    });
     const response = await axios.post(
       'http://localhost:8085/stripe/create-payment-link',
-      { amount: Number(paymentDetails.total) * 100, currency: 'ron' }
+      { amount: Number(total) * 100, currency: 'ron' }
     );
     window.location.href = response.data.paymentLink;
   }
@@ -38,9 +33,7 @@ export default function Header({
     event.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
   }
-  function handleMenuClick(event) {
-    event.stopPropagation();
-  }
+
   function handleOutsideClick() {
     setIsMenuOpen(false);
   }

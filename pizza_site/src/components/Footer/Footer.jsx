@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="footer-3">
         <h3>
           {' '}
-          <a href="../Footer/info.pdf'" onClick={handleClickPDF}>
+          <a href="../info.pdf" onClick={handleClickPDF}>
             Descarcă gramaje, alergeni, ingrediente și valori nutriționale
           </a>{' '}
         </h3>
